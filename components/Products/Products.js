@@ -13,7 +13,7 @@ class Products {
             element.innerHTML = this.labelRemove
         } else {
             element.classList.remove(this.classNameActive)
-            element.innerHTML = this.labelRemove
+            element.innerHTML = this.labelAdd
         }
         headerPage.render(products.length) // изменение счётчика header
     }
@@ -31,7 +31,7 @@ class Products {
                 activeText = this.labelAdd
             } else {
                 activeText = ' '+this.labelRemove
-                activeClass = ' products-element__price_active'
+                activeClass = ' products-element__btn_active'
             }
 
 
@@ -40,10 +40,10 @@ class Products {
                 <li class="products-element">
                     <span class="products-element__name">${name}</span>
                     <img class="products-element__img" src="${img}" />
-                    <span class="products-element__price${activeClass}">
+                    <span class="products-element__price">
                         ⚡️${price.toLocaleString()} USD
                     </span>
-                    <button class="products-element__btn" onClick="productsPage.handleSetLocationStorage(this, '${id}')">
+                    <button class="products-element__btn ${activeClass}" onClick="productsPage.handleSetLocationStorage(this, '${id}')">
                         ${activeText}
                     </button>
                 </li>
