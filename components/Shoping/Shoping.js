@@ -23,7 +23,9 @@ class Shopping {
         //нужно скачать svg иконку с сайта flat-icon и поместить в папку img
         const html = `
             <div class="shopping-container">
-                <div class="shopping__close" onclick="shoppingPage.handleClear()"></div> 
+                <div class="shopping__close" onclick="shoppingPage.handleClear()">
+                    <img class="shopping__close-icon" src="components/Shoping/img/close-icon.jpg"/>
+                </div> 
                 <table>
                     ${htmlCatalog}
                     <tr>

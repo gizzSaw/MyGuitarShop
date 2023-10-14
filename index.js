@@ -6,7 +6,7 @@ function render() {
     //shoppingPage.render()
 }
 
-spinner.render()
+spinnerPage.render()
 
 let CATALOG = []
 
@@ -18,11 +18,12 @@ fetch('server/catalog.json')
         CATALOG = body
 
         setTimeout(() => {
-            spinner.handleClear()
+            spinnerPage.handleClear()
             render()
-        }, 2000)
+        }, 1000) // искусственная задержка для показа спинера
 
     })
     .catch(error => {
-        console.log(error)
+        spinnerPage.handleClear()
+        errorPage.render(error)
     })
