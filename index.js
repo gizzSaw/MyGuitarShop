@@ -12,7 +12,7 @@ let CATALOG = []
 
 
 
-fetch('server/catalog.json')
+fetch('server/catalog1.json')
     .then(res => res.json())
     .then(body => {
         CATALOG = body
